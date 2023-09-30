@@ -1,0 +1,32 @@
+{
+  "name": "Garmin Connect Assist",
+  "version": "1.0.0.0",
+  "manifest_version": 3,
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting"
+  ],
+  "description": "A bowser extension to enhance the Garmin Connect website.",
+  "icons": {
+    "32": "icons/GarminAssist_32x32.png",
+    "64": "icons/GarminAssist_64x64.png",
+    "128": "icons/GarminAssist_128x128.png"
+  },
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/content.js"
+      ],
+      "matches": [
+        "https://*.garmin.com/*"
+      ]
+    }
+  ]
+}
